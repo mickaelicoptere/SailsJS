@@ -12,6 +12,10 @@ module.exports = {
             minLength: 6,
             required: true
         },
+        address: {
+            collection: 'address',
+            via: 'owner',
+        },
         toJSON: function() {
             var obj = this.toObject();
             delete obj.password;
@@ -30,5 +34,6 @@ module.exports = {
                 }
             });
         });
-    }
+    },
 };
+

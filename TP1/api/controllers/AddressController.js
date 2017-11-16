@@ -20,7 +20,5 @@ module.exports = {
       return res.json(records);
 
     });
-
   }
-
 };

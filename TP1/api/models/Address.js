@@ -4,5 +4,14 @@ module.exports = {
     street: {
       type: 'string'
     },
+
+    address: {
+      type: 'string'
+    },
+
+    owner: {
+      model: 'user'
+    },
   },
 };
+
