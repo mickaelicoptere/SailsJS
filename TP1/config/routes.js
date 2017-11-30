@@ -71,7 +71,11 @@ module.exports.routes = {
 
 'get /signup': {
  view: 'signup'
-}
+},
 
+'get /verrou' : {
+  controller: 'AccountController',
+  action: 'verrou'
+}
 
 };
