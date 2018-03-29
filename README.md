@@ -1,28 +1,29 @@
-## Bien le bonjour
+# Ex1
 
-You can use the [editor on GitHub](https://github.com/mickaelicoptere/SailsJS/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+## 1.1
 
-```markdown
-Syntax highlighted code block
+- L'évènement `onLoad`
+- Les méthodes `document.getElementById('id')` ou `document.querySelector('#id')`
+- La propriété `innerHTML`
+- La méthode `document.getElementsByTagName('h2')` par exemple
+- On peut simplement faire `document.getElementsByTagName('h2').length`
+- On peut faire `document.querySelector('.firstOrLast')`
+- Cette question n'a pas de sens.
+- En faisant `nombre % 2 === 0`
 
-# Header 1
-## Header 2
-### Header 3
+## 1.2
 
-- Bulleted
-- List
+- `innerHTML, outerHTML, textContent` sont standards, les 2 autres sont des bricolages d'Internet Explorer
+- Par déduction, oui
 
-1. Numbered
-2. List
+## 1.3
 
-**Bold** and _Italic_ and `Code` text
+- Il n'y a pas de liste. Sinon, `document.querySelectorAll('whateverSelector')[0]`
+- Pareil, mais on extrait le résultat de querySelectorAll dans une variable (e.g. `author`) et on fait `author[author.length - 1]`
 
-[Link](url) and ![Image](src)
-```
+# Ex2
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+- On fait la diff. absolue en millisecondes entre "now" et la date indiquée, et on divise le résultat par la duréen en millisecondes d'1 jour.
+  Obligé de le mettre en absolu, sinon la valeur obtenue est négative.
+- En updatant le innerHTML, en remplaçant "xxx" dans le texte par le nombre de jours (`String.replace`).
+- setInterval, car c'est censé boucler tous les x temps pour mettre à jour la date.
