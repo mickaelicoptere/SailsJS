@@ -12,6 +12,7 @@ function init() {
     defTitre3();
     datemodif();
     horloge.innerHTML = hour();
+    document.getElementById("inputlol").addEventListener('input',chgtext);
 }
 
 function defTitre1() {
@@ -35,7 +36,6 @@ function defTitre4() {
     if (tags.length === 0) {
         pageTitle.innerHTML = name;
     } else if (tags.length % 2 === 0) {
-        // pair
         pageTitle.innerHTML = tags[0].innerHTML;
     } else {
         pageTitle.innerHTML = tags[tags.length - 1].innerHTML;
@@ -107,4 +107,19 @@ function majGrafH() {
 
 function menu() {
     
+}
+
+function chgtext(){
+    var reg = new RegExp('^[0-9]+$');
+    var input = document.getElementById("inputlol");
+    if(input.value==""){
+        input.style.color="white";
+        input.style.backgroundColor="white";
+    }
+    if(!isNaN(input.value)){
+        input.style.backgroundColor="green";
+    }else{
+        input.style.color="red";
+        input.style.backgroundColor="white";
+    }
 }
