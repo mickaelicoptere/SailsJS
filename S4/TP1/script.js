@@ -112,14 +112,13 @@ function menu() {
 function chgtext(){
     var reg = new RegExp('^[0-9]+$');
     var input = document.getElementById("inputlol");
-    if(input.value==""){
-        input.style.color="white";
+    if(input.value==null){
+        input.value.style.color="black";
         input.style.backgroundColor="white";
     }
     if(!isNaN(input.value)){
         input.style.backgroundColor="green";
     }else{
-        input.style.color="red";
-        input.style.backgroundColor="white";
+        input.style.backgroundColor="red";
     }
 }
