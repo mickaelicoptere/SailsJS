@@ -7,14 +7,16 @@
     <title>Lanier Mickaël TD4</title>
 </head>
 <body>
-    <h1>Heyyyyyy</h1>
-    <button type="button" onclick="loadData()">Load Data</button>
+    <h1>TP AJAX & Asynchronous data</h1>
+    <button type="button" onclick="buttonLoadData()">Load Xul Data </button>
     <br/>
     <p id='data'></p>
-
+    <h2>ComboBox</h2>
+    <select id='selection' onclick="loadData()">
+        <option value="https://www.xul.fr/rss.xml">XUL</option>
+        <option value="https://filuns.unice.fr/accueil/rss_view">Unice</option>
+        <option value="https://www.lemonde.fr/rss/">LeMonde</option>
+    </select>
 
     <script type="text/javascript" src="script.js"></script>
-
-
-
 </body>
