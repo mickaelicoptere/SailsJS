@@ -5,6 +5,8 @@
     <meta name="author" content="Mickael Lanier" />
     <meta name="description" content="TD 4" />
     <title>Lanier Mickaël TD4</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="script.js"></script>
 </head>
 <body>
     <h1>TP AJAX & Asynchronous data</h1>
@@ -12,11 +14,13 @@
     <br/>
     <p id='data'></p>
     <h2>ComboBox</h2>
+    <form action="javascript:void(0);" id="feedChoice">
     <select id='selection' onclick="loadData()">
         <option value="https://www.xul.fr/rss.xml">XUL</option>
         <option value="https://filuns.unice.fr/accueil/rss_view">Unice</option>
         <option value="https://www.lemonde.fr/rss/">LeMonde</option>
     </select>
-
-    <script type="text/javascript" src="script.js"></script>
+    </form>
+    <div id='rssFeed'></div>
+    <button id='tglBtn'>Toggle Button</button>
 </body>

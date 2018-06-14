@@ -1,8 +1,33 @@
-document.querySelector('body').onload = init;
+// document.querySelector('body').onload = init;
 const proxy = 'https://cors-anywhere.herokuapp.com/'
 const url1 = 'https://www.xul.fr/rss.xml';
 const url2 = 'https://filuns.unice.fr/accueil/rss_view';
 var myRequest;
+
+$(document).ready(function () {
+    $('#tglBtn').on('click', function () {
+        $('#selection').toggle();
+    });
+
+    $('#selection').change(function (event) {
+        console.log(event.target.value);
+    });
+
+    $('#selection').change(function (event) {
+        $.post(
+            "proxy.php",
+            {
+                rssUrl: event.target.value
+            },
+            function (data) {
+                $('#rssFeed').html(data);
+            }
+        );
+    });
+});
+
+
+
 
 function init() {
     if(window.XMLHttpRequest){
@@ -21,15 +46,26 @@ function init() {
 function loadData () {
     document.getElementById("selection").addEventListener("change", function(event) {
         console.log(event.target.value);
-        send(event);
-        document.getElementById("data").innerHTML = this.responseText;
+        var req = proxy+event.target.value;
+        console.log(req);
+        send(req);
+        document.getElementById("rssFeed").innerHTML = this.responseText;
     })
 }
 
 function send(event) {
-    myRequest.open('GET',proxy + event.target.value, true);
-    console.log(event.target.value);
-    myRequest.send();
+    myRequest.open('post',"proxy.php", true);
+    // myRequest.setRequestHeader("Content‐Type","application/x‐www‐form‐urlencoded");
+    myRequest.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+    myRequest.send("rssUrl=" + event);
+    // console.log(event.target.value);
+    // myRequest.send();
+}
+
+function sendJson(url){
+    myRequest.open("post","proxyJson.php", true);
+    myRequest.setRequestHeader("Content‐Type","application/x‐www‐form‐urlencoded");
+    myRequest.send("rssURL=" + event.target.value);
 }
 
 
@@ -44,3 +80,6 @@ function buttonLoadData () {
     myRequest.open('GET',proxy+url1, true);
     myRequest.send();
 }
+
+init();
+
